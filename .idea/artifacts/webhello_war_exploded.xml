@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="webhello:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/webhello_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="webhello/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Webhello" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="application" name="org.apache.commons:commons-lang3:3.0" />
+        </element>
+      </element>
+      <element id="dir-copy" path="$PROJECT_DIR$/web" />
+    </root>
+  </artifact>
+</component>
