@@ -1,5 +1,7 @@
 package myboard.entity;
 
+import java.util.Random;
+
 /**
  * User: HolyEyE
  * Date: 13. 2. 27. Time: 오후 5:20
@@ -21,6 +23,16 @@ public class Board {
     private String writer;
     private String pw;
     private String content;
+
+    public Board(String title, String writer, String pw) {
+
+        Random random = new Random(10000);
+
+        setId(random.nextInt());
+        setTitle(title);
+        setWriter(writer);
+        setPw(pw);
+    }
 
     public int getId() {
         return id;

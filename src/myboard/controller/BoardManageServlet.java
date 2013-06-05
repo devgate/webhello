@@ -21,6 +21,7 @@ public class BoardManageServlet extends HttpServlet {
     BoardRepository boardRepository = BoardMemoryRepository.getInstance();
     List<Board> boardList;
     String action = null;
+    //private final BoardAddServlet boardAddServlet = new BoardAddServlet(this);
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)   {
 
@@ -35,7 +36,7 @@ public class BoardManageServlet extends HttpServlet {
         board.setContent(request.getParameter("cotent"));
 
         if(StringUtils.equalsIgnoreCase("add", action)){
-            addBoard(board);
+            //boardAddServlet.addBoard(board);
         }else if(StringUtils.equalsIgnoreCase("update", action)){
             updateBoard(board);
         }else if(StringUtils.equalsIgnoreCase("delete", action)){
@@ -65,7 +66,7 @@ public class BoardManageServlet extends HttpServlet {
     }
 
     private void addBoard(Board board) {
-        boardList.add(board);
+        //boardAddServlet.addBoard(board);
     }
 
 
