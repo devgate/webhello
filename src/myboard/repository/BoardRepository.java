@@ -13,4 +13,6 @@ public interface BoardRepository {
     List<Board> getBoards();
 
     void addBoard(Board board);
+
+    void deleteBoard(int id);
 }

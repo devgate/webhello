@@ -12,9 +12,7 @@ import java.util.List;
 public class BoardMemoryRepository implements BoardRepository {
 
     private static int keyStore = 1;
-
     private static BoardMemoryRepository instance = new BoardMemoryRepository();
-
     private List<Board> boards = new ArrayList<Board>();
 
     public static BoardMemoryRepository getInstance() {
@@ -22,16 +20,8 @@ public class BoardMemoryRepository implements BoardRepository {
     }
 
     private BoardMemoryRepository() {
-
-        Board board = new Board();
-        board.setId(generateId());
-        board.setTitle("title1");
-        board.setWriter("작성자1");
-        board.setContent("좋은 글 입니다.1");
-        board.setPw("pw1");
-
-        boards.add(board);
-        boards.add(new Board(generateId(), "title2","작성자2","pw2","content입니다."));
+        boards.add(new Board(generateId(), "title1","작성자1","pw1","content1 입니다."));
+        boards.add(new Board(generateId(), "title2","작성자2","pw2","content2 입니다."));
     }
 
     @Override
@@ -41,10 +31,20 @@ public class BoardMemoryRepository implements BoardRepository {
 
     @Override
     public void addBoard(Board board) {
-
         int newId = generateId();
         board.setId(newId);
         boards.add(board);
+    }
+
+    @Override
+    public void deleteBoard(int id) {
+
+        for(Board board: boards){
+            if(board.equals(id)){
+                boards.remove(id);
+            }
+        }
+
     }
 
     private synchronized int generateId() {
